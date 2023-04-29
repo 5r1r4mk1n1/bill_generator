@@ -1,5 +1,5 @@
 import datetime
-import gen
+import generate_bill
 i=1
 sno=1
 while(i):
@@ -29,7 +29,7 @@ while(i):
     elif choice==3:
         with open("bill_no.txt","r") as f:
             bno=f.read()
-        gen.generatepdf(bno)
+        generate_bill.generatepdf(bno)
         open("current_bill.txt","w")
         with open("bill_no.txt","w") as f:
             f.write(str(int(bno)+1))
