@@ -53,7 +53,10 @@ def getdata(billno):
             li=j.strip().split()
             res.append(li)
             total+=int(li[-1])
-    res.extend([[None]*6]*(33-len(res)))
+    if len(res)<=30:
+        res.extend([[None]*6]*(33-len(res)))
+    else:
+        res.extend([[None]*6]*3)
     res[-3]=[None,None,None,None,"TOTAL",total]
     res[-1]=[None,"Seal & Signature",None,None,None,None]
     return res
